@@ -1,0 +1,49 @@
+<html>
+<img src="tamil.png" style="max-height:60%;height:70%;" onclick="telll()">
+<script language="javascript">
+a=0;
+	function telll()
+	{
+	if(a==0)
+	{
+			document.getElementById("lat1").style.visibility="visible";
+			document.getElementById("long1").style.visibility="visible";
+			a=1;
+			
+			}
+			else
+			{
+			document.getElementById("lat2").style.visibility="visible";
+			document.getElementById("lon2").style.visibility="visible";
+			mark();
+			}
+	
+	
+	}
+	
+	 
+function mark()
+{
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              
+alert(this.responseText);
+            }
+        };
+        xmlhttp.open("GET", "send.php", true);
+        xmlhttp.send();
+    }
+	 
+	</script>
+
+<br>
+<h3>From:<br>
+<input type="text" id="lat1" name="lat" style="visibility:hidden;font-size:150%;" value="11.085467">
+<input type="text" id="long1" name="lon" style="visibility:hidden;font-size:150%" value="76.981674">
+<br>To : <br>
+<input type="text" id="lat2" name="lat" style="visibility:hidden;font-size:150%" value="11.083389">
+<input type="text" id="lon2" name="lon" style="visibility:hidden;font-size:150%" value="76.981817">
+</h3>
+
